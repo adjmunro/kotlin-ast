@@ -1,0 +1,86 @@
+####################################################################################################
+####                                                                                             ###
+####                                          Versions                                           ###
+####                                                                                             ###
+####################################################################################################
+[versions]
+####################################################################################################
+#######################################   Project Verions   ########################################
+####################################################################################################
+project-group-id = "nz.adjmunro"
+project-artifact-id = "ast"
+project-version-major = "0"
+project-version-minor = "1"
+project-version-patch = "0"
+project-android-compileSdk = "36"  # Enable access to newer APIs (can be higher than targetSdk).
+project-android-minSdk = "0"       # Minimum supported Android version that the app can be installed on.
+
+####################################################################################################
+#####################################   Language & Compiler   ######################################
+####################################################################################################
+# Toolchain used to compile the project (higher = better tooling)
+java-toolchain = "21"
+
+# Bytecode version to target & compile against (lower = more compatibility)
+# Using Java 17, which is the lowest version to support sealed classes.
+java-bytecode = "17"
+
+# Kotlin Language/Compiler Version
+kotlin-language = "2.2.0"
+
+####################################################################################################
+########################################   App Libraries   #########################################
+####################################################################################################
+adjmunro-inline = "0.2.0"
+adjmunro-outcome = "0.2.0"
+android-gradle-plugin = "8.11.1"
+dokka = "2.0.0"
+jetbrains-coroutines = "1.10.2"
+junit5 = "5.13.4"
+kotest = "5.9.1"
+
+####################################################################################################
+####                                                                                             ###
+####                                          Plugins                                            ###
+####                                                                                             ###
+####################################################################################################
+[plugins]
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-language" }
+
+####################################################################################################
+####                                                                                             ###
+####                                         Libraries                                           ###
+####                                                                                             ###
+####################################################################################################
+[libraries]
+adjmunro-inline = { group = "nz.adjmunro", name = "inline", version.ref = "adjmunro-inline" }
+adjmunro-outcome = { group = "nz.adjmunro", name = "outcome", version.ref = "adjmunro-outcome" }
+jetbrains-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "jetbrains-coroutines" }
+jetbrains-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "jetbrains-coroutines" }
+junit5 = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit5" }
+kotest-assertions = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
+kotest-property = { group = "io.kotest", name = "kotest-property", version.ref = "kotest" }
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin-language" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin-language" }
+
+####################################################################################################
+####                                                                                             ###
+####                                          Bundles                                            ###
+####                                                                                             ###
+####################################################################################################
+[bundles]
+core = [
+    "adjmunro-inline",
+    "adjmunro-outcome",
+    "jetbrains-coroutines-core",
+    "kotlin-stdlib",
+]
+test = [
+    "jetbrains-coroutines-test",
+    "kotest-assertions",
+    "kotest-property",
+    "kotlin-test",
+]

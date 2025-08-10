@@ -13,7 +13,7 @@ project-version-major = "0"
 project-version-minor = "1"
 project-version-patch = "0"
 project-android-compileSdk = "36"  # Enable access to newer APIs (can be higher than targetSdk).
-project-android-minSdk = "0"       # Minimum supported Android version that the app can be installed on.
+project-android-minSdk = "1"       # Minimum supported Android version that the app can be installed on.
 
 ####################################################################################################
 #####################################   Language & Compiler   ######################################

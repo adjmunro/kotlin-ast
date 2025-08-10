@@ -23,17 +23,18 @@
 > If an opening tag includes an `=` sign (except for `[click]`), it must also have a closing tag with the same `=` sign. This is to ensure proper parsing of nested scopes.
 ## Inline Text Styles
 
-| Syntax                                                  | Description                            |
-|---------------------------------------------------------|----------------------------------------|
-| `[b]text[/b]` / `[b=w100]text[/b=w100]`                 | Bold (W700 default or W100-W900)       |
-| `[i]text[/i]`                                           | Italic text                            |
-| `[u]text[/u]`                                           | Underlined text                        |
-| `[s]text[/s]`                                           | Strikethrough text                     |
-| `[sub]text[/sub]`                                       | Subscript text                         |
-| `[sup]text[/sup]`                                       | Superscript text                       |
-| `[size=10]text[/size=10]`                               | Text Size (10sp)                       |
-| `[fg=#FF0000]text[/fg=#FF0000]`                         | Coloured text foreground (hexadecimal) |
-| `[bg=#FF0000]text[/bg=#FF0000]`                         | Coloured text background (hexadecimal) |
+| Syntax                                  | Description                            |
+|-----------------------------------------|----------------------------------------|
+| `[b]text[/b]` / `[b=w100]text[/b=w100]` | Bold (W700 default or W100-W900)       |
+| `[i]text[/i]`                           | Italic text                            |
+| `[u]text[/u]`                           | Underlined text                        |
+| `[s]text[/s]`                           | Strikethrough text                     |
+| `[sub]text[/sub]`                       | Subscript text                         |
+| `[sup]text[/sup]`                       | Superscript text                       |
+| `[size=10]text[/size=10]`               | Text Size (10sp)                       |
+| `[fg=#FF0000]text[/fg=#FF0000]`         | Coloured text foreground (hexadecimal) |
+| `[bg=#FF0000]text[/bg=#FF0000]`         | Coloured text background (hexadecimal) |
+| `[h1]text[/h1]`                         | Heading 1-6 (does not add newlines)    |
 
 > ### Font Weight
 > The `w` in `[b=w100]` refers to a font weight enum, which are discreet multiples of 100.
@@ -87,3 +88,9 @@
 | `[numlist]...[/numlist]` | Defines an ordered list. May be nested.      |
 | `[list]...[/list]`       | Defines an unordered list. May be nested.    |
 | `[li]item1[li]item2`     | List item (each delimited by the next item). | 
+
+# TODO:
+- write TDD - make start with the hardest part first?
+- actually, first start by tokenizing all tags into open/close objects with indexes in the clean string.
+- then construct the AST from the tokens (if AST even makes sense - how to handle out of order tags?)
+- add a [[$id]] replace by id name tag? something easier to work with than format? or is it,might just end up being the same thing/

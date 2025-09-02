@@ -9,7 +9,7 @@
   - Doing so would involve searching the string for matching keywords, and using the index to style to content, which is tedious. 
   - Not only is this approach prone to bugs (especially with nested styling), but it immediately breaks down when faced with multilingual strings.
 - Compose offers a `fromHtml` function, but a full HTML parser is heavier and is only suitable for remote strings sent from the server.
-- Android string resources are cleaned of all XML/HTML-like tags when loaded.
+- Android string resources are cleaned of all XML/HTML-like tags when loaded (unless `CDATA` is used, however that is not necessarily more conventient for binding `onClick` callbacks).
   - Angle brackets `<tag>text</tag>` are not allowed in Android string resources, so we use square brackets instead.
   - Similar issues arise with apostrophes and speech marks, which are not allowed in Android string resources without escaping `\'` & `\"`.
 - SRE is not in conflict with markdown. 
@@ -93,4 +93,8 @@
 - write TDD - make start with the hardest part first?
 - actually, first start by tokenizing all tags into open/close objects with indexes in the clean string.
 - then construct the AST from the tokens (if AST even makes sense - how to handle out of order tags?)
-- add a [[$id]] replace by id name tag? something easier to work with than format? or is it,might just end up being the same thing/
+- add a `[[$id]]` replace by id name tag? something easier to work with than format? or is it, might just end up being the same thing.
+- Or perhaps some variant of `\[`, `\]`, `[[]]` to display inline square brackets
+- Perhaps support using `@body1` etc selector tags & creating a function to bind certain selectors to specific compose styles to replace design-system specific styles
+- Add `Text<T>` interface
+- Perhaps `[tag /]` should mean "apply this style until the end of the string.

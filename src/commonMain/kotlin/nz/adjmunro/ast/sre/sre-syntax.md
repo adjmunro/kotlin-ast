@@ -84,7 +84,6 @@
 
 | Syntax                   | Description                                  |
 |--------------------------|----------------------------------------------|
-| `[hr]`                   | Horizontal rule                              |
 | `[numlist]...[/numlist]` | Defines an ordered list. May be nested.      |
 | `[list]...[/list]`       | Defines an unordered list. May be nested.    |
 | `[li]item1[li]item2`     | List item (each delimited by the next item). | 
@@ -97,4 +96,4 @@
 - Or perhaps some variant of `\[`, `\]`, `[[]]` to display inline square brackets
 - Perhaps support using `@body1` etc selector tags & creating a function to bind certain selectors to specific compose styles to replace design-system specific styles
 - Add `Text<T>` interface
-- Perhaps `[tag /]` should mean "apply this style until the end of the string.
+- Perhaps `[tag /]` should mean "apply this style until the end of the string".

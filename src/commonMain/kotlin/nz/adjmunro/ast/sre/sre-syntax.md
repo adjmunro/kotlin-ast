@@ -34,7 +34,6 @@
 | `[size=10]text[/size=10]`               | Text Size (10sp)                       |
 | `[fg=#FF0000]text[/fg=#FF0000]`         | Coloured text foreground (hexadecimal) |
 | `[bg=#FF0000]text[/bg=#FF0000]`         | Coloured text background (hexadecimal) |
-| `[h1]text[/h1]`                         | Heading 1-6 (does not add newlines)    |
 
 > ### Font Weight
 > The `w` in `[b=w100]` refers to a font weight enum, which are discreet multiples of 100.
